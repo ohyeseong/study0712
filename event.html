@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+
+            $(".click").click(function(event){
+                console.log(event);
+            })// .click
+
+            $(window).scroll(function(event){
+                console.log(event);
+            })// window.scroll
+        })// 제이커리 끝
+    </script>
+
+    <style type="text/css">
+        body{
+            height: 10000px;
+        }
+    </style>
+</head>
+<body>
+    <button class="click">click!</button>
+</body>
+</html>

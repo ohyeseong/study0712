@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script lang="java">
+        $(document).ready(function(){
+            var w1 = $(window).width();
+            console.log(w1);
+
+            var h1 = $(window).height();
+            $(".p2").text(h1)
+
+            var p_w = $(".p3").width();
+            $(".p3").text(p_w)
+
+            var p4_w = $(".p4").innerWidth();
+            $(".p4").text(p4_w)
+
+            var w_in = $(window).innerWidth();
+            $(".p5").text(w_in)
+
+            var w_out = $(window).outerWidth();
+            $(".p6").text(w_out)
+
+            // 쓸수있는 실제 공간이 450이라고 뜬거(보더와 패딩제외)
+            var box_w1 = $(".box").width();
+            $(".box").text(box_w1);
+
+            // 보더값을 제외한 공간(패딩은 포함) 490
+            var box_w1 = $(".box").innerWidth();
+            $(".box").text(box_w1);
+
+            // 보더와 패딩을 포함한 순수width값 500
+            var box_w1 = $(".box").outerWidth();
+            $(".box").text(box_w1);
+        })// 제이커리 끝
+        
+        $(window).resize(function(){
+            // resize는 윈도우의 크기 변화에 따라 그 태그에 크기를 실시간으로 알수 있다
+            var w1 = $(window).width();
+            console.log(w1);
+    
+            $(".p1").text(w1);
+
+            var h1 = $(window).height();
+            $(".p2").text(h1)
+
+            var p_w = $(".p3").width();
+            $(".p3").text(p_w)
+
+            var p4_w = $(".p4").innerWidth();
+            $(".p4").text(p4_w)
+
+            var w_in = $(window).innerWidth();
+            $(".p5").text(w_in)
+
+            var w_out = $(window).outerWidth();
+            $(".p6").text(w_out)
+        })// document.resize
+    </script>
+
+    <style type="text/css">
+        p{
+            width: 80%;
+            border: 1px solid red;
+            margin: 100px auto;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .box{
+            width: 500px;
+            height: 200px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 50px auto;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p class="p1"></p>
+    <p class="p2"></p>
+    <p class="p3"></p>
+    <p class="p4"></p>
+    <p class="p5"></p>
+    <p class="p6"></p>
+
+    <div class="box">
+
+    </div>
+</body>
+</html>

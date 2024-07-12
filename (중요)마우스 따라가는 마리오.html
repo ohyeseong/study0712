@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $("html, body").mousemove(function(e){
+                // console.log(e);
+                // 콘솔에서 pageX, pageY값을 확인할수 있는데 이건 마우스 좌표를 의미한다
+
+                console.log("x축", e.pageX);
+                console.log("y축", e.pageY);
+
+                var y = e.pageY;
+
+                $(".mario").css({"top":y});
+            })// mousemove
+        })// jQuery fin
+    </script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .mario{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            float: right;
+        }
+
+        .mario img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="mario">
+        <img src="source/icon01.png" alt="m1">
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    background-color: #00365a;
+    color: white;
+}
+
+html, body{
+    height: 100%;
+}
+
+.wrap{}
+
+#header{
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav{
+    background-color: rgba(204, 0, 255, 0.5);
+}
+
+.nav, .fix_nav{
+    height: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* 포지션을 뜯으면 height가 사라지고 
+    부모의 width값을 상속받지 못함 */
+    background-color: rgba(84, 3, 95, 0.5);
+    transition: all 0.3s;
+}
+.nav ul, .fix_nav ul{
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+    /* align-items을 줄때는 높이값이 있어야 적용된다 */
+}
+
+.nav ul li, .fix_nav ul li{}
+
+.nav ul li a, .fix_nav ul li a{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fix_nav{
+    top: -100px !important;
+    /* .fix_nav는 먼저 올려놓고 스크롤되면
+     내려와야 하기 때문 */
+}
+
+/* addClass, removeClass를 주기위한 밑작업 */
+.fix_nav.on{
+    top: 0 !important;
+}
+
+/* 스크롤하면 fix_nav와 nav의 위치가 서로 바뀐다는거 */
+.nav.on{
+    top: -100px !important;
+}
+
+/* 콘테이너 영역 */
+
+.container{
+    position: fixed;
+    top: 0;
+}
+
+.container .page{
+    width: 100vw; /* 순수 width값 */
+    height: 100vh; /* 순수 height값 */
+    padding: 150px;
+    box-sizing: border-box;
+    border: 5px solid white;
+}
+
+.container .page h1{
+    font-size: 100px;
+}
+
+.btn_group{
+    position: fixed;
+    top: 150px;
+    right: 20px;
+}
+.btn_group ul{}
+.btn_group ul li{
+    margin-bottom: 20px;
+}
+.btn_group ul li a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: gray;
+    text-indent: -9999px;
+}
+
+.btn_group ul li.on a{
+    background-color: white;
+}
